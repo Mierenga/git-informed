@@ -8,8 +8,6 @@ do
   compare_array=($compare)
   remote_ahead=${compare_array[0]}
   local_ahead=${compare_array[1]}
-  echo remote: $remote_ahead ahead
-  echo local:  $local_ahead ahead
   message="${repo} (${branch}) $remote_ahead commits behind origin"
   if (( $remote_ahead > $prev_remote_ahead )); then
     log_lines=$(( $remote_ahead > 1 ? 2 : 1 ))  
