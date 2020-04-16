@@ -15,6 +15,8 @@ do
     log_lines=$(( $remote_ahead > 1 ? 2 : 1 ))  
     log=`git log --oneline --pretty=format:"• %<(50,trunc)%s" -n $log_lines origin/master`
     eval "osascript -e 'display notification \"$log\" with title \"$message\"'" 
+    last_log=`git log --oneline --pretty=format:"• %s" -n 1 origin/master`
+    eval "osascript -e 'display alert \"New commit on origin/${branch}\" message \"${last_log}\"'" 
   fi
   prev_remote_ahead=${remote_ahead}
   sleep 10
