@@ -3,7 +3,7 @@
 prev_remote_ahead=0
 while :
 do
-  git fetch origin
+  git fetch origin > /dev/null
   repo=`basename $(git rev-parse --show-toplevel)`
   branch=`git branch --show-current`
   compare=`git rev-list --left-right --count origin/${branch}...${branch}`
