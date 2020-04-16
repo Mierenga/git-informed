@@ -17,5 +17,5 @@ do
     eval "osascript -e 'display notification \"$log\" with title \"$message\"'" 
   fi
   prev_remote_ahead=${remote_ahead}
-  sleep 10
+  sleep 5
 done
