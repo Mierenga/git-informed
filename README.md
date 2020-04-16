@@ -1,4 +1,5 @@
 # git-informed
+
 Get notifications of new commits on remote branch origin/HEAD
 - Tells you how many commits behind your local branch is
 - Notification comes through macOS within 10 seconds of a new commit on the remote branch
