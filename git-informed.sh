@@ -19,5 +19,5 @@ do
     eval "osascript -e 'display alert \"New commit on origin/${branch}\" message \"${last_log}\"'" 
   fi
   prev_remote_ahead=${remote_ahead}
-  sleep 10
+  sleep 5
 done
