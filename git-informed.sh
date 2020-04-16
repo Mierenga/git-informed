@@ -1,3 +1,5 @@
+#!/bin/bash
+
 prev_remote_ahead=0
 while :
 do
