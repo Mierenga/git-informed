@@ -6,6 +6,7 @@ Get notifications of new commits on remote branch origin/HEAD
 - Runs in an infinite loop
 
 ```sh
+cp git-informed.sh ~/repo/of/choice
 cd ~/repo/of/choice
 ./git-informed.sh
 ```
