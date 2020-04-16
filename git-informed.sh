@@ -5,10 +5,11 @@ do
   branch=`git branch --show-current`
   compare=`git rev-list --left-right --count origin/${branch}...${branch}`
   compare_array=($compare)
-  remote_ahead=${compare_array[1]}
+  remote_ahead=${compare_array[0]}
+  local_ahead=${compare_array[1]}
   echo remote: ${remote_ahead} ahead
-  echo local:  ${compare_array[1]} ahead
-  message="(${branch}) is ahead by "
+  echo local:  ${local_ahead} ahead
+  message="Remote branch (${branch}) is ahead by ${remote_ahead} commits"
   if (( ${remote_ahead} > ${prev_remote_ahead} )); then
     eval "osascript -e 'display notification \"$message\" with title \"⌛️\"'" 
   fi
