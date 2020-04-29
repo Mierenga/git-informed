@@ -10,7 +10,7 @@ show_notification() {
   if [[ $platform == 'Darwin' ]]; then
     eval "osascript -e 'display notification \"$2\" with title \"$1\"'" 
   elif [[ $platform == 'Linux' ]]; then
-    notify-send '$1' '$2'
+    eval "notify-send \"$1\" \"$2\""
   fi
 }
 
@@ -66,7 +66,7 @@ do
     log_lines=$(( $remote_ahead > 1 ? 2 : 1 ))  
     log=`git log --oneline --pretty=format:"• %<(50,trunc)%s" -n $log_lines origin/${branch}`
     show_notification "${message}" "${log}"
-    last_log=`git log --oneline --pretty=format:"• %s" -n 1 origin/master`
+    last_log=`git log --oneline --pretty=format:"• %s" -n 1 origin/${branch}`
     show_alert_modal "${branch}" "${last_log}"
   fi
   prev_remote_ahead=${remote_ahead}
