@@ -62,7 +62,7 @@ do
   local_ahead=${compare_array[1]}
   message="${repo} (${branch}) $remote_ahead commits behind origin"
   [[ -n $VERBOSE ]] && echo $message
-  if (( $remote_ahead > $prev_remote_ahead )); then
+  if [[ $remote_ahead -gt $prev_remote_ahead ]]; then
     log_lines=$(( $remote_ahead > 1 ? 2 : 1 ))  
     log=`git log --oneline --pretty=format:"• %<(50,trunc)%s" -n $log_lines origin/${branch}`
     show_notification "${message}" "${log}"
