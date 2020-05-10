@@ -10,7 +10,7 @@ Get notifications of new commits on a remote branch
 
 ## Usage
 ```sh
-cp git-informed.sh ~/repo/of/choice
+ln -s git-informed.sh ~/repo/of/choice/git-informed.sh
 cd ~/repo/of/choice
 ./git-informed.sh
 ```
