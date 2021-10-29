@@ -9,18 +9,28 @@ Get notifications of new commits on a remote branch
 - Runs in an infinite sleepy loop
 
 ## Usage
+### Install as git command
+Put on your $PATH, e.g.
+```sh
+cp git-informed.sh /usr/local/bin/git-informed
+
+```
+Use in any repo as normal git command
+```sh
+git informed
+
+# or in the background
+git informed &
+
+# with specific branch
+git informed development &
+```
+
+### Symlink in repo
 ```sh
 ln -s git-informed.sh ~/repo/of/choice/git-informed.sh
 cd ~/repo/of/choice
 ./git-informed.sh
-```
-or in the background
-```sh
-./git-informed.sh &
-```
-with specific branch
-```sh
-./git-informed.sh development &
 ```
 ## Arguments
 |position|name|description|
